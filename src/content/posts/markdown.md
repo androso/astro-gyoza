@@ -1,103 +1,104 @@
 ---
-title: Markdown 示例
+title: Markdown Example
 date: 2024-04-01
-summary: 这是一篇 Markdown 文章的示例。展示了 Markdown 的语法和渲染效果。
-category: 例子
+summary: This is an example of a Markdown article. It demonstrates Markdown syntax and rendering effects.
+category: Example
 tags: [Markdown]
+comments: false
+draft: true
 ---
+The following are some basic Markdown syntax examples that can be used when writing Markdown content in Astro.
 
-下面是在 Astro 中编写 Markdown 内容时，可以使用的一些基本 Markdown 语法示例。
+## Headings
 
-## 标题
+You should avoid repeatedly creating article titles in the Markdown body, as the article title will be automatically generated based on the `title` in the `frontmatter`.
 
-你应该避免在 Markdown 正文中重复创建文章标题，因为文章标题会根据 `frontmatter` 中 `title` 自动生成。
+> Avoid heading levels that are too deep, generally up to three levels of headings is enough.
 
-> 避免标题层级过深，一般到三级标题就够了。
+# Level 1
 
-# 一级
+## Level 2 
 
-## 二级
+### Level 3 `inline code`
 
-### 三级 `inline code`
+#### Level 4
 
-#### 四级
+##### Level 5 
 
-##### 五级
+###### Level 6
 
-###### 六级
-
-## 段落
+## Paragraphs
 
 Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum, voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur? Quiatem. Nam, omnis sum am facea corem alique molestrunt et eos evelece arcillit ut aut eos eos nus, sin conecerem erum fuga. Ri oditatquam, ad quibus unda veliamenimin cusam et facea ipsamus es exerum sitate dolores editium rerore eost, temped molorro ratiae volorro te reribus dolorer sperchicium faceata tiustia prat.
 
-使用行尾使用两个空格进行段落内的换行
+Use two spaces at the end of a line for line breaks within a paragraph
 
 All work and no play makes Jack a dull boy.  
 All work and no play makes Jack a dull boy.
 
-## 图片
+## Images
 
-小尺寸的图片
+Small image
 
-![图片描述](https://picsum.photos/seed/picsum/250/400)
+![Image description](https://picsum.photos/seed/picsum/250/400)
 
-大尺寸的图片
+Large image
 
-![图片描述](https://picsum.photos/seed/picsum/1200/900)
+![Image description](https://picsum.photos/seed/picsum/1200/900)
 
-带标题的图片
+Image with a title
 
-![图片描述](https://picsum.photos/seed/picsum/400/300 '图片标题')
+![Image description](https://picsum.photos/seed/picsum/400/300 'Image title')
 
-## 强调
+## Emphasis
 
-这是**重要内容**，这是*次要内容*
+This is **important** content, this is *secondary* content
 
-## 删除线
+## Strikethrough
 
-~~这是一段被删除的文本。~~
+~~This is a deleted text.~~
 
-## 引用
+## Quotes
 
 The blockquote element represents content that is quoted from another source, optionally with a citation which must be within a `footer` or `cite` element, and optionally with in-line changes such as annotations and abbreviations.
 
 > Tiam, ad mint andaepu dandae nostion secatur sequo quae.  
 > **Note** that you can use _Markdown syntax_ within a blockquote.
 
-嵌套的引用
+Nested quotes
 
-> 引用
+> Quote
 >
-> > 嵌套的引用
+> > Nested quote
 
-带脚标的引用
+Quote with a footnote
 
 > Don't communicate by sharing memory, share memory by communicating.<br>
 > — <cite>Rob Pike[^1]</cite>
 
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
-## 分割线
+## Horizontal Rules
 
 ---
 
-## 链接
+## Links
 
-这是内部链接 [Gyoza 使用指南](/posts/guide)
+This is an internal link [Gyoza Usage Guide](/posts/guide)
 
-这是外部连接 [React **中文**文档](https://zh-hans.react.dev/)
+This is an external link [React **Chinese** Documentation](https://zh-hans.react.dev/)
 
-自动渲染成连接 <https://github.com>
+Automatically rendered as a link <https://github.com>
 
-邮箱地址 <mail@example.com>
+Email address <mail@example.com>
 
-## 表格
+## Tables
 
 | Italics   | Bold     | Code   |
 | --------- | -------- | ------ |
 | _italics_ | **bold** | `code` |
 
-## 代码块
+## code block 
 
 ### Syntax
 

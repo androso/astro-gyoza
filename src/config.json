@@ -1,81 +1,111 @@
 {
   "site": {
-    "url": "https://gyoza.lxchapu.com",
-    "title": "Gyoza",
-    "description": "这是一个使用 Astro 和 React 开发的博客主题。",
+    "url": "https://anibalandrade.com",
+    "title": "anibal andrade",
+    "description": "This is a blog theme developed using Astro and React.",
     "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
     "lang": "zh-CN",
     "favicon": "/favicon.ico",
     "appleTouchIcon": "/apple-touch-icon.png"
   },
   "author": {
-    "name": "lxchapu",
-    "twitterId": "@lxchapu",
-    "avatar": "https://s2.loli.net/2024/04/30/ozsnuS5Ihf3xMBG.webp"
+    "name": "anibalandrade",
+    "twitterId": "@anibalandrade_",
+    "avatar": "/avatar.jpg"
   },
   "hero": {
-    "name": "Gyoza",
-    "bio": "A staic blog template build with Astro and React.",
-    "description": "Clean, Cute, Fast.",
+    "name": "anibal",
+    "bio": "I'm a software engineer who loves writing software and following my curiosity",
+    "description": "When i'm not hacking, you can find me exploring neuroscience and writing essays around love, friendships and life",
     "socials": [
       {
         "name": "Github",
         "icon": "icon-github",
-        "url": "https://github.com/lxchapu/astro-gyoza",
+        "url": "https://github.com/androso",
         "color": "rgb(24, 23, 23)"
       },
       {
         "name": "X",
         "icon": "icon-x",
-        "url": "https://twitter.com/lxchapu",
+        "url": "https://twitter.com/anibalandrade_",
         "color": "rgb(36, 46, 54)"
       },
       {
         "name": "Email",
         "icon": "icon-mail",
-        "url": "mailto:lxchapu@outlook.com",
+        "url": "mailto:androso421@gmail.com",
         "color": "rgb(212, 70, 56)"
       }
     ],
-    "yiyan": "当第一颗卫星飞向大气层外，我们便以为自己终有一日会征服宇宙。"
+    "yiyan": "The stars are our birthright."
   },
   "color": {
     "accent": [
-      { "light": "#F55555", "dark": "#FCCF31" },
-      { "light": "#0396FF", "dark": "#ABDCFF" },
-      { "light": "#fb7287", "dark": "#99D8CF" },
-      { "light": "#F072B6", "dark": "#FFF886" },
-      { "light": "#9F44D3", "dark": "#E2B0FF" },
-      { "light": "#FF6666", "dark": "#A1CCD1" },
-      { "light": "#F6416C", "dark": "#838BC6" },
-      { "light": "#32CCBC", "dark": "#90F7EC" },
-      { "light": "#33A6B8", "dark": "#79F1A4" },
-      { "light": "#F55555", "dark": "#FCCF31" }
+      {
+        "light": "#F55555",
+        "dark": "#FCCF31"
+      },
+      {
+        "light": "#0396FF",
+        "dark": "#ABDCFF"
+      },
+      {
+        "light": "#fb7287",
+        "dark": "#99D8CF"
+      },
+      {
+        "light": "#F072B6",
+        "dark": "#FFF886"
+      },
+      {
+        "light": "#9F44D3",
+        "dark": "#E2B0FF"
+      },
+      {
+        "light": "#FF6666",
+        "dark": "#A1CCD1"
+      },
+      {
+        "light": "#F6416C",
+        "dark": "#838BC6"
+      },
+      {
+        "light": "#32CCBC",
+        "dark": "#90F7EC"
+      },
+      {
+        "light": "#33A6B8",
+        "dark": "#79F1A4"
+      },
+      {
+        "light": "#F55555",
+        "dark": "#FCCF31"
+      }
     ]
   },
   "menus": [
     {
-      "name": "首页",
+      "name": "Home",
       "link": "/",
       "icon": "icon-pantone"
     },
     {
-      "name": "归档",
+      "name": "Archive",
       "link": "/archives",
       "icon": "icon-archive"
     },
     {
-      "name": "项目",
+      "name": "Projects",
       "link": "/projects",
       "icon": "icon-flask"
     },
     {
-      "name": "关于",
+      "name": "About",
       "link": "/about",
       "icon": "icon-ghost"
     },
     {
-      "name": "友链",
+      "name": "Friends",
       "link": "/friends",
       "icon": "icon-hearts"
     }

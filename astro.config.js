@@ -27,6 +27,6 @@ export default defineConfig({
       rehypeCodeBlock,
       rehypeCodeHighlight,
     ],
-    remarkRehype: { footnoteLabel: '参考', footnoteBackLabel: '返回正文' },
+    remarkRehype: { footnoteLabel: 'Reference', footnoteBackLabel: 'Back to Content' },
   },
 })

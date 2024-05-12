@@ -1,9 +1,11 @@
 ---
-title: 在文章中嵌入视频和代码
+title: Embedding Videos and Code in Articles
 date: 2024-04-04
 tags: [Video, Markdown]
-category: 例子
-summary: 这篇文章介绍了如何在文章中嵌入视频和代码。
+category: Example
+summary: This article introduces how to embed videos and code in articles.
+comments: false
+draft: true
 ---
 
 ## Codepen
