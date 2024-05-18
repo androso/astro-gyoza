@@ -15,6 +15,9 @@ import { site } from './src/config.json'
 export default defineConfig({
   site: site.url,
   integrations: [tailwind(), react(), sitemap()],
+  server: {
+    port: 24678
+  },
   markdown: {
     syntaxHighlight: false,
     smartypants: false,
