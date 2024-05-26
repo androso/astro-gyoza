@@ -6,7 +6,8 @@
     "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
     "lang": "zh-CN",
     "favicon": "/favicon.ico",
-    "appleTouchIcon": "/apple-touch-icon.png"
+    "appleTouchIcon": "/apple-touch-icon.png",
+    "logo": "/logo.jpg"
   },
   "author": {
     "name": "anibalandrade",
@@ -37,7 +38,7 @@
         "color": "rgb(212, 70, 56)"
       }
     ],
-    "yiyan": "The stars are our birthright."
+    "yiyan": "Ad astra, per aspera"
   },
   "color": {
     "accent": [
@@ -90,14 +91,14 @@
       "icon": "icon-pantone"
     },
     {
-      "name": "Archive",
-      "link": "/archives",
-      "icon": "icon-archive"
-    },
-    {
       "name": "Projects",
       "link": "/projects",
       "icon": "icon-flask"
+    },
+    {
+      "name": "Archive",
+      "link": "/archives",
+      "icon": "icon-archive"
     },
     {
       "name": "About",
@@ -105,9 +106,8 @@
       "icon": "icon-ghost"
     },
     {
-      "name": "Friends",
-      "link": "/friends",
-      "icon": "icon-hearts"
+      "name": "Ai",
+      "link": "/ai"
     }
   ],
   "posts": {
