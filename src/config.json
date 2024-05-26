@@ -96,8 +96,13 @@
       "icon": "icon-flask"
     },
     {
-      "name": "Archive",
-      "link": "/archives",
+      "name": "Blog",
+      "link": "/blog",
+      "icon": "icon-archive"
+    },
+    {
+      "name": "Books",
+      "link": "/books",
       "icon": "icon-archive"
     },
     {

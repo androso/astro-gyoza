@@ -7,11 +7,11 @@ import { getOldestPosts } from '@/utils/content'
 const oldestPosts = await getOldestPosts()
 ---
 
-<PageLayout title="Archives">
+<PageLayout title="Blog">
   <div class="max-w-[800px] mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
-        <Highlight>Archives</Highlight>
+        <Highlight>Blog</Highlight>
       </h1>
       <p>{oldestPosts.length} articles in total.</p>
       <hr class="w-[100px] border-zinc-200 dark:border-zinc-700" />
