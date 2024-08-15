@@ -1,4 +1,4 @@
 ---
 title: Projects 
-description: Projects coming soon!
+description: More projects coming soon!
 ---

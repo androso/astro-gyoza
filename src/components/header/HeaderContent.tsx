@@ -89,7 +89,7 @@ function HeaderMenu({ isBgShow }: { isBgShow: boolean }) {
             key={menu.name}
             href={menu.link}
             title={menu.name}
-            icon={menu.icon}
+            icon={menu.icon ?? ""}
             isActive={pathName === menu.link}
           />
         ))}
