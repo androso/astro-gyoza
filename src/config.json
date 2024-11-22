@@ -5,14 +5,14 @@
     "description": "This is a blog theme developed using Astro and React.",
     "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
     "lang": "zh-CN",
-    "favicon": "/favicon.ico",
+    "favicon": "/ico_avatar.ico",
     "appleTouchIcon": "/apple-touch-icon.png",
-    "logo": "/logo.jpg"
+    "logo": "/new_avatar.jpg"
   },
   "author": {
     "name": "anibalandrade",
     "twitterId": "@anibalandrade_",
-    "avatar": "/avatar_new.jpg"
+    "avatar": "/avatar.jpg"
   },
   "hero": {
     "name": "anibal",
