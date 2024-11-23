@@ -4,14 +4,14 @@
     "title": "anibal andrade",
     "description": "This is a blog theme developed using Astro and React.",
     "keywords": "Gyoza,blog,Astro,theme,lxchapu,博客主题",
-    "lang": "zh-CN",
+    "lang": "en",
     "favicon": "/ico_avatar.ico",
     "appleTouchIcon": "/apple-touch-icon.png",
     "logo": "/new_avatar.jpg"
   },
   "author": {
     "name": "anibalandrade",
-    "twitterId": "@anibalandrade_",
+    "twitterId": "@androsoa3",
     "avatar": "/avatar.jpg"
   },
   "hero": {
@@ -28,7 +28,7 @@
       {
         "name": "X",
         "icon": "icon-x",
-        "url": "https://twitter.com/anibalandrade_",
+        "url": "https://twitter.com/androsoa3",
         "color": "rgb(36, 46, 54)"
       },
       {
@@ -38,7 +38,7 @@
         "color": "rgb(212, 70, 56)"
       }
     ],
-    "yiyan": "Ad astra, per aspera"
+    "yiyan": ""
   },
   "color": {
     "accent": [

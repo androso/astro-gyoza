@@ -24,9 +24,9 @@ const shareList = [
         `https://twitter.com/intent/tweet?url=${encodeURIComponent(data.url)}&text=${encodeURIComponent(data.text)}&via=${encodeURIComponent(site.title)}`,
       )
     },
-  },
-  {
-    name: '复制链接',
+    },
+    {
+    name: 'Copy Link',
     icon: 'icon-link',
     onClick: (data: ShareData) => {
       navigator.clipboard.writeText(data.url)
@@ -66,7 +66,7 @@ function ShareButton() {
   if (!isClient) return null
 
   const url = new URL(postSlug, site.url).href
-  const text = `嘿，我发现了一片宝藏文章「${postTitle}」哩，快来看看吧！`
+  const text = `Hey, I found this interesting article "${postTitle}", check it out!`
 
   return (
     <Dialog.Root open={isOpen} onOpenChange={setIsOpen}>
@@ -108,27 +108,27 @@ function ShareButton() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
               >
-                <h2 className="px-3 py-1 font-bold">分享此内容</h2>
+                <h2 className="px-3 py-1 font-bold">Share this content</h2>
                 <hr className="my-2 border-zinc-200 dark:border-zinc-700" />
                 <div className="px-3 py-2 grid grid-cols-[180px_auto] gap-3">
                   <QR.QRCodeSVG value={url} size={180} />
-                  <div className="flex flex-col gap-2 text-sm">
-                    分享到...
+                    <div className="flex flex-col gap-2 text-sm">
+                    Share to...
                     <ul className="flex flex-col gap-2">
                       {shareList.map((item) => (
-                        <li
-                          className="px-2 py-1 flex gap-2 text-base cursor-pointer rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
-                          key={item.name}
-                          onClick={() => item.onClick({ url, text })}
-                          role="button"
-                          aria-label={`Share to ${item.name}`}
-                        >
-                          <i className={clsx('iconfont text-accent', item.icon)}></i>
-                          <span>{item.name}</span>
-                        </li>
+                      <li
+                        className="px-2 py-1 flex gap-2 text-base cursor-pointer rounded-md hover:bg-gray-100 dark:hover:bg-gray-800"
+                        key={item.name}
+                        onClick={() => item.onClick({ url, text })}
+                        role="button"
+                        aria-label={`Share to ${item.name}`}
+                      >
+                        <i className={clsx('iconfont text-accent', item.icon)}></i>
+                        <span>{item.name}</span>
+                      </li>
                       ))}
                     </ul>
-                  </div>
+                    </div>
                 </div>
               </motion.div>
             </Dialog.Content>
@@ -181,13 +181,13 @@ function DonateButton() {
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: 20, opacity: 0 }}
               >
-                <h2 className="text-center mb-5">感谢您的支持，这将成为我前进的最大动力。</h2>
+                <h2 className="text-center mb-5">Thank you for your support, this will be my greatest motivation to move forward.</h2>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <img
-                    className="size-[300px] object-cover"
-                    src={sponsor.wechat}
-                    alt="微信赞赏码"
-                    loading="lazy"
+                  className="size-[300px] object-cover"
+                  src={sponsor.wechat}
+                  alt="WeChat Reward QR Code"
+                  loading="lazy"
                   />
                 </div>
               </motion.div>
