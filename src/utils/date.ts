@@ -22,14 +22,13 @@ export function getRelativeTime(startDate: Date, endDate = new Date()) {
   return null
 }
 
-// Get a formatted date in the format: 2024 year 1 month 1 day Monday 
+// Get a formatted date in the format: 2024 year 1 month 1 day Monday
 export function getFormattedDate(date: Date) {
-  const year = date.getFullYear() % 100
-  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  const month = date.toLocaleString('default', { month: 'long' })
   const day = date.getDate()
-  const week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][date.getDay()]
 
-  return `${year} Year ${month} Month ${day} Day ${week}`
+  return `${month} ${day}, ${year}`
 }
 
 // Pad 0 in front of a number
@@ -37,7 +36,7 @@ function padZero(number: number, len = 2) {
   return number.toString().padStart(len, '0')
 }
 
-// Get the formatted date and time in the format: 2024 year 01 month 01 day 12:00 
+// Get the formatted date and time in the format: 2024 year 01 month 01 day 12:00
 export function getFormattedDateTime(date: Date) {
   const year = date.getFullYear()
   const month = padZero(date.getMonth() + 1)
@@ -48,7 +47,7 @@ export function getFormattedDateTime(date: Date) {
   return `${year} year ${month} month ${day} day ${hours}:${minutes}`
 }
 
-// Get the difference in days between two dates 
+// Get the difference in days between two dates
 export function getDiffInDays(startDate: Date, endDate = new Date()) {
   return Math.floor((endDate.getTime() - startDate.getTime()) / (1000 * 86400))
 }
@@ -61,7 +60,7 @@ export function getShortDate(date: Date) {
   return `${month}-${day}`
 }
 
-// How many days are there in the year the date is in 
+// How many days are there in the year the date is in
 export function getDaysInYear(date: Date) {
   const year = date.getFullYear()
   if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
@@ -70,13 +69,13 @@ export function getDaysInYear(date: Date) {
   return 365
 }
 
-// Get the start date of the year the date is in 
+// Get the start date of the year the date is in
 export function getStartOfYear(date: Date) {
   const year = date.getFullYear()
   return new Date(year, 0, 1)
 }
 
-// Get the start date of the day the date is in 
+// Get the start date of the day the date is in
 export function getStartOfDay(date: Date) {
   return new Date(date.getFullYear(), date.getMonth(), date.getDate())
 }
