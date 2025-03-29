@@ -10,6 +10,8 @@ import TagList from '@/components/TagList.astro'
 import CategoryList from '@/components/CategoryList.astro'
 import type { CollectionEntry } from 'astro:content'
 import Hero from '@/components/hero/Hero.astro'
+import ProjectList from '@/components/ProjectList.astro'
+import { getCollection } from 'astro:content'
 
 export const getStaticPaths = (async () => {
   const sortedPosts = await getSortedPosts()
@@ -39,6 +41,7 @@ const { currentPage, totalPage, data } = Astro.props
 const hotTags = await getHotTags()
 const allTags = await getAllTags()
 const allCategories = await getAllCategories()
+const projects = await getCollection('projects')
 
 const getPageUrl = (page: number) => {
   if (page === 1) return '/'
@@ -52,14 +55,28 @@ const getPageUrl = (page: number) => {
     <div
       class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] items-start gap-10"
     >
-      <SectionBlock title="Recent">
-        <PostList posts={data} />
-        {
-          totalPage > 1 && (
-            <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
-          )
-        }
-      </SectionBlock>
+      <div>
+        <SectionBlock title="Recent">
+          <PostList posts={data} />
+          {
+            totalPage > 1 && (
+              <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
+            )
+          }
+        </SectionBlock>
+        
+        {currentPage === 1 && (
+          <SectionBlock title="Projects">
+            <ProjectList projects={projects} />
+            <div class="mt-4 text-right">
+              <a class="text-sm text-base/60 hover:text-accent" href="/projects">
+                More Projects <i class="iconfont icon-arrow-right" />
+              </a>
+            </div>
+          </SectionBlock>
+        )}
+      </div>
+      
       <aside class="md:sticky md:top-20 space-y-10">
         <SectionBlock title="Categories">
           <CategoryList categories={allCategories} />
