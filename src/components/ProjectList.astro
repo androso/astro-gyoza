@@ -3,12 +3,13 @@ import type { CollectionEntry } from 'astro:content'
 
 interface Props {
 	projects: CollectionEntry<'projects'>[]
+	columns?: 2 | 3 // Optional parameter to control number of columns
 }
 
-const { projects } = Astro.props
+const { projects, columns = 2 } = Astro.props
 ---
 
-<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+<ul class={`grid grid-cols-1 sm:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : ''} gap-4 md:gap-8`}>
 	{
 		projects != null &&
 			projects.map((project: any) => (
