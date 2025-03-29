@@ -4,15 +4,20 @@ import type { CollectionEntry } from 'astro:content'
 interface Props {
 	projects: CollectionEntry<'projects'>[]
 	columns?: 2 | 3 // Optional parameter to control number of columns
+	maxItems?: number // Optional parameter to limit number of projects shown
 }
 
-const { projects, columns = 2 } = Astro.props
+const { projects, columns = 2, maxItems } = Astro.props
+
+// Filter projects if maxItems is provided
+const displayedProjects = maxItems ? projects.slice(0, maxItems) : projects
+const hasMoreProjects = maxItems && projects.length > maxItems
 ---
 
 <ul class={`grid grid-cols-1 sm:grid-cols-2 ${columns === 3 ? 'lg:grid-cols-3' : ''} gap-4 md:gap-8`}>
 	{
-		projects != null &&
-			projects.map((project: any) => (
+		displayedProjects != null &&
+			displayedProjects.map((project: any) => (
 				<li>
 					<a href={project.data.link} target="_blank" rel="noopener noreferrer external">
 						<div class="rounded-lg bg-accent/10 overflow-hidden group">
@@ -37,3 +42,11 @@ const { projects, columns = 2 } = Astro.props
 			))
 	}
 </ul>
+
+{hasMoreProjects && (
+	<div class="mt-4 text-right">
+		<a class="text-sm text-base/60 hover:text-accent" href="/projects">
+			More Projects <i class="iconfont icon-arrow-right" />
+		</a>
+	</div>
+)}
