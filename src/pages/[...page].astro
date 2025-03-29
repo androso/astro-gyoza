@@ -52,6 +52,21 @@ const getPageUrl = (page: number) => {
 <PageLayout>
   <div>
     {currentPage === 1 && <Hero />}
+    {currentPage === 1 && (
+      <div
+        class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid items-start gap-10"
+      >
+        <SectionBlock title="Projects">
+                  <ProjectList projects={projects} />
+                  <div class="mt-4 text-right">
+                    <a class="text-sm text-base/60 hover:text-accent" href="/projects">
+                      More Projects <i class="iconfont icon-arrow-right" />
+                    </a>
+                  </div>
+        </SectionBlock>
+      </div>
+    )}
+
     <div
       class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] items-start gap-10"
     >
@@ -65,16 +80,7 @@ const getPageUrl = (page: number) => {
           }
         </SectionBlock>
         
-        {currentPage === 1 && (
-          <SectionBlock title="Projects">
-            <ProjectList projects={projects} />
-            <div class="mt-4 text-right">
-              <a class="text-sm text-base/60 hover:text-accent" href="/projects">
-                More Projects <i class="iconfont icon-arrow-right" />
-              </a>
-            </div>
-          </SectionBlock>
-        )}
+        
       </div>
       
       <aside class="md:sticky md:top-20 space-y-10">
