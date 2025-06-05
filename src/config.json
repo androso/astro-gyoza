@@ -96,11 +96,6 @@
       "icon": "icon-flask"
     },
     {
-      "name": "Blog",
-      "link": "/blog",
-      "icon": "icon-archive"
-    },
-    {
       "name": "Books",
       "link": "/books",
       "icon": "icon-archive"
