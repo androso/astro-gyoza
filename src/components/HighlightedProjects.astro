@@ -3,13 +3,12 @@ import type { CollectionEntry } from 'astro:content'
 
 interface Props {
 	projects: CollectionEntry<'projects'>[]
-	maxItems?: number
 }
 
-const { projects, maxItems = 2 } = Astro.props
+const { projects } = Astro.props
 
-// Filter projects to show only the specified number
-const displayedProjects = projects.slice(0, maxItems)
+// Only show projects that are marked as highlighted
+const displayedProjects = projects.filter(project => project.data.highlighted)
 ---
 
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">

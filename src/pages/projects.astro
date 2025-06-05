@@ -4,7 +4,10 @@ import { getCollection, getEntry } from 'astro:content'
 import ProjectList from '@/components/ProjectList.astro'
 import Highlight from '@/components/Highlight.astro'
 
-const projects = await getCollection('projects')
+const allProjects = await getCollection('projects')
+
+// Show all projects on the projects page (you can change this to exclude highlighted projects if needed)
+const projects = allProjects
 
 const md = await getEntry('spec', 'projects')
 ---
