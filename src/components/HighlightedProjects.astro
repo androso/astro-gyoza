@@ -28,15 +28,12 @@ const displayedProjects = projects.slice(0, maxItems)
 					<div class="p-4 space-y-4">
 						<div class="group-hover:text-accent">
 							<span class="text-xl font-bold">{project.data.title}</span>
-							<a href={project.data.link} target="_blank" rel="noopener noreferrer external" class="ml-2 hover:text-accent">
-								<i class="iconfont icon-external-link" />
-							</a>
 						</div>
 						<p class="text-sm line-clamp-2">{project.data.description}</p>
 						<div class="flex gap-2">
 							<a 
 								href="#"
-								class="inline-flex items-center px-4 py-2 bg-accent text-white dark:text-black rounded-md hover:bg-accent/90 transition-colors text-sm font-medium flex-1 justify-center"
+								class="inline-flex items-center px-4 py-2 bg-accent text-white dark:text-black rounded-md hover:bg-accent/90 transition-colors text-sm font-medium"
 							>
 								Read More
 								<i class="ml-2 iconfont icon-arrow-right" />
