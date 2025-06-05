@@ -1,0 +1,59 @@
+---
+import type { CollectionEntry } from 'astro:content'
+
+interface Props {
+	projects: CollectionEntry<'projects'>[]
+	maxItems?: number
+}
+
+const { projects, maxItems = 2 } = Astro.props
+
+// Filter projects to show only the specified number
+const displayedProjects = projects.slice(0, maxItems)
+---
+
+<ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">
+	{
+		displayedProjects.map((project: any) => (
+			<li>
+				<div class="rounded-lg bg-accent/10 overflow-hidden group">
+					<div class="aspect-video overflow-hidden">
+						<img
+							class="size-full object-cover transition-transform group-hover:scale-110"
+							src={project.data.image}
+							alt={`Project cover: ${project.data.title}`}
+							loading="lazy"
+						/>
+					</div>
+					<div class="p-4 space-y-4">
+						<div class="group-hover:text-accent">
+							<span class="text-xl font-bold">{project.data.title}</span>
+							<a href={project.data.link} target="_blank" rel="noopener noreferrer external" class="ml-2 hover:text-accent">
+								<i class="iconfont icon-external-link" />
+							</a>
+						</div>
+						<p class="text-sm line-clamp-2">{project.data.description}</p>
+						<div class="flex gap-2">
+							<a 
+								href="#"
+								class="inline-flex items-center px-4 py-2 bg-accent text-white dark:text-black rounded-md hover:bg-accent/90 transition-colors text-sm font-medium flex-1 justify-center"
+							>
+								Read More
+								<i class="ml-2 iconfont icon-arrow-right" />
+							</a>
+							<a 
+								href={project.data.link} 
+								target="_blank" 
+								rel="noopener noreferrer external"
+								class="inline-flex items-center px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-black rounded-md transition-colors text-sm font-medium"
+							>
+								View Project
+								<i class="ml-2 iconfont icon-external-link" />
+							</a>
+						</div>
+					</div>
+				</div>
+			</li>
+		))
+	}
+</ul>

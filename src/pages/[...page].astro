@@ -11,6 +11,7 @@ import CategoryList from '@/components/CategoryList.astro'
 import type { CollectionEntry } from 'astro:content'
 import Hero from '@/components/hero/Hero.astro'
 import ProjectList from '@/components/ProjectList.astro'
+import HighlightedProjects from '@/components/HighlightedProjects.astro'
 import { getCollection } from 'astro:content'
 
 export const getStaticPaths = (async () => {
@@ -52,6 +53,15 @@ const getPageUrl = (page: number) => {
 <PageLayout>
 	<div>
 		{currentPage === 1 && <Hero />}
+		{
+			currentPage === 1 && (
+				<div class="max-w-[1100px] px-4 md:px-8 py-16 mx-auto">
+					<SectionBlock title="Highlighted Projects">
+						<HighlightedProjects projects={projects} maxItems={2} />
+					</SectionBlock>
+				</div>
+			)
+		}
 		{
 			currentPage === 1 && (
 				<div class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid items-start gap-10">
