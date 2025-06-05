@@ -17,12 +17,27 @@ const displayedProjects = projects.filter(project => project.data.highlighted)
 			<li>
 				<div class="rounded-lg bg-accent/10 overflow-hidden group">
 					<div class="aspect-video overflow-hidden">
-						<img
-							class="size-full object-cover transition-transform group-hover:scale-110"
-							src={project.data.image}
-							alt={`Project cover: ${project.data.title}`}
-							loading="lazy"
-						/>
+						{project.data.video ? (
+							<video
+								class="size-full object-cover transition-transform group-hover:scale-110"
+								src={project.data.video}
+								muted
+								loop
+								autoplay
+								playsinline
+								onmouseenter="this.play()"
+								onmouseleave="this.pause()"
+							>
+								Your browser does not support the video tag.
+							</video>
+						) : (
+							<img
+								class="size-full object-cover transition-transform group-hover:scale-110"
+								src={project.data.image}
+								alt={`Project cover: ${project.data.title}`}
+								loading="lazy"
+							/>
+						)}
 					</div>
 					<div class="p-4 space-y-4">
 						<div class="group-hover:text-accent">

@@ -21,9 +21,12 @@ const projectsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    image: z.string(),
+    image: z.string().optional(),
+    video: z.string().optional(),
     link: z.string().url(),
     highlighted: z.boolean().default(false),
+  }).refine(data => data.image || data.video, {
+    message: "Either image or video must be provided",
   }),
 })
 

@@ -1,4 +1,4 @@
-import { input } from "@inquirer/prompts";
+import { input, select } from "@inquirer/prompts";
 import fs from "fs";
 import path from "path";
 import { isFileNameSafe } from "./utils.js";
@@ -30,14 +30,32 @@ const description = await input({
 const link = await input({
   message: "请输入项目地址",
 });
-const image = await input({
-  message: "请输入预览图片地址",
+
+const mediaType = await select({
+  message: "选择缩略图类型",
+  choices: [
+    { name: "图片 (Image)", value: "image" },
+    { name: "视频 (Video)", value: "video" }
+  ]
 });
 
-const content = `title: ${title}
+const mediaPath = await input({
+  message: `请输入${mediaType === 'image' ? '预览图片' : '预览视频'}地址`,
+});
+
+const highlighted = await select({
+  message: "是否设为精选项目?",
+  choices: [
+    { name: "否", value: false },
+    { name: "是", value: true }
+  ]
+});
+
+let content = `title: ${title}
 description: ${description}
 link: ${link}
-image: ${image}
+${mediaType}: ${mediaPath}
+highlighted: ${highlighted}
 `;
 
 const fullPath = getProjectFullPath(fileName);

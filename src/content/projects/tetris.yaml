@@ -2,4 +2,4 @@ title: tetris game
 description: a fun web game written in react based on the famous tetris game
 image: /tetris.png
 link: https://github.com/androso/Tetris
-highlighted: true
+highlighted: false 
