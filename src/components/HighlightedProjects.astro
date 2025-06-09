@@ -44,15 +44,33 @@ const displayedProjects = projects.filter(project => project.data.highlighted)
 							<span class="text-xl font-bold">{project.data.title}</span>
 						</div>
 						<p class="text-sm line-clamp-2">{project.data.description}</p>
-						<div class="flex gap-2">
-							<a 
+						<div class="flex flex-wrap gap-2">
+							{/* <a 
 								href="#"
 								class="inline-flex items-center px-4 py-2 bg-accent text-white dark:text-black rounded-md hover:bg-accent/90 transition-colors text-sm font-medium"
 							>
 								Read More
 								<i class="ml-2 iconfont icon-arrow-right" />
+							</a> */}
+							<a 
+								href={project.data.demo || "#"} 
+								target="_blank" 
+								rel="noopener noreferrer external"
+								class="inline-flex items-center px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-black rounded-md transition-colors text-sm font-medium"
+							>
+								Demo
+								<i class="ml-2 iconfont icon-external-link" />
 							</a>
 							<a 
+								href={project.data.github || "#"} 
+								target="_blank" 
+								rel="noopener noreferrer external"
+								class="inline-flex items-center px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-black rounded-md transition-colors text-sm font-medium"
+							>
+								Github
+								<i class="ml-2 iconfont icon-external-link" />
+							</a>
+							{/* <a 
 								href={project.data.link} 
 								target="_blank" 
 								rel="noopener noreferrer external"
@@ -60,7 +78,7 @@ const displayedProjects = projects.filter(project => project.data.highlighted)
 							>
 								View Project
 								<i class="ml-2 iconfont icon-external-link" />
-							</a>
+							</a> */}
 						</div>
 					</div>
 				</div>
