@@ -2,4 +2,5 @@ title: asteroids game
 description: a fun desktop game written in python based on the famous asteroids game
 video: /asteroids-min.mp4
 link: https://github.com/androso/asteroids-py
+github: https://github.com/androso/asteroids-py
 highlighted: false

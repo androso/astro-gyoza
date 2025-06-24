@@ -19,40 +19,61 @@ const hasMoreProjects = maxItems && projects.length > maxItems
 		displayedProjects != null &&
 			displayedProjects.map((project: any) => (
 				<li>
-					<a href={project.data.link} target="_blank" rel="noopener noreferrer external">
-						<div class="rounded-lg bg-accent/10 overflow-hidden group">
-							<div class="aspect-video overflow-hidden">
-								{project.data.video ? (
-									<video
-										class="size-full object-cover transition-transform group-hover:scale-110"
-										src={project.data.video}
-										muted
-										loop
-										autoplay
-										playsinline
-										onmouseenter="this.play()"
-										onmouseleave="this.pause()"
+					<div class="rounded-lg bg-accent/10 overflow-hidden group">
+						<div class="aspect-video overflow-hidden">
+							{project.data.video ? (
+								<video
+									class="size-full object-cover transition-transform group-hover:scale-110"
+									src={project.data.video}
+									muted
+									loop
+									autoplay
+									playsinline
+									onmouseenter="this.play()"
+									onmouseleave="this.pause()"
+								>
+									Your browser does not support the video tag.
+								</video>
+							) : (
+								<img
+									class="size-full object-cover transition-transform group-hover:scale-110"
+									src={project.data.image}
+									alt={`Project cover: ${project.data.title}`}
+									loading="lazy"
+								/>
+							)}
+						</div>
+						<div class="p-4 space-y-4">
+							<div class="group-hover:text-accent">
+								<span class="text-xl font-bold">{project.data.title}</span>
+							</div>
+							<p class="text-sm line-clamp-2">{project.data.description}</p>
+							<div class="flex flex-wrap gap-2">
+								{project.data.demo && (
+									<a 
+										href={project.data.demo} 
+										target="_blank" 
+										rel="noopener noreferrer external"
+										class="inline-flex items-center px-4 py-2 bg-accent text-white dark:text-black rounded-md hover:bg-accent/90 transition-colors text-sm font-medium"
 									>
-										Your browser does not support the video tag.
-									</video>
-								) : (
-									<img
-										class="size-full object-cover transition-transform group-hover:scale-110"
-										src={project.data.image}
-										alt={`Project cover: ${project.data.title}`}
-										loading="lazy"
-									/>
+										Demo
+										<i class="ml-2 iconfont icon-external-link" />
+									</a>
+								)}
+								{project.data.github && (
+									<a 
+										href={project.data.github} 
+										target="_blank" 
+										rel="noopener noreferrer external"
+										class="inline-flex items-center px-4 py-2 border border-accent text-accent hover:bg-accent hover:text-white dark:hover:text-black rounded-md transition-colors text-sm font-medium"
+									>
+										Github
+										<i class="ml-2 iconfont icon-external-link" />
+									</a>
 								)}
 							</div>
-							<div class="p-4">
-								<div class="group-hover:text-accent">
-									<span class="text-xl font-bold">{project.data.title}</span>
-									<i class="ml-2 iconfont icon-external-link" />
-								</div>
-								<p class="mt-2 text-sm line-clamp-2">{project.data.description}</p>
-							</div>
 						</div>
-					</a>
+					</div>
 				</li>
 			))
 	}

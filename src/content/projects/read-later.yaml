@@ -2,5 +2,6 @@ title: Read Later
 description: A modern bookmark manager, built with mongodb and next.js
 image: /read-later.png
 link: https://github.com/androso/read-later
+github: https://github.com/androso/read-later
 demo: https://read-later-lilac.vercel.app
 highlighted: false 
