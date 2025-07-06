@@ -6,8 +6,8 @@ import Highlight from '@/components/Highlight.astro'
 
 const allProjects = await getCollection('projects')
 
-// Show all projects on the projects page (you can change this to exclude highlighted projects if needed)
-const projects = allProjects
+// Sort projects by dateAdded in descending order (most recent first)
+const projects = allProjects.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())
 
 const md = await getEntry('spec', 'projects')
 ---

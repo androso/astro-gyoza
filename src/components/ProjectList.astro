@@ -9,8 +9,11 @@ interface Props {
 
 const { projects, columns = 2, maxItems } = Astro.props
 
+// Sort projects by dateAdded in descending order
+const sortedProjects = projects.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())
+
 // Filter projects if maxItems is provided
-const displayedProjects = maxItems ? projects.slice(0, maxItems) : projects
+const displayedProjects = maxItems ? sortedProjects.slice(0, maxItems) : sortedProjects
 const hasMoreProjects = maxItems && projects.length > maxItems
 ---
 

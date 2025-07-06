@@ -7,8 +7,10 @@ interface Props {
 
 const { projects } = Astro.props
 
-// Only show projects that are marked as highlighted
-const displayedProjects = projects.filter(project => project.data.highlighted)
+// Sort projects by dateAdded in descending order and show only highlighted ones
+const displayedProjects = projects
+	.filter(project => project.data.highlighted)
+	.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())
 ---
 
 <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-8">

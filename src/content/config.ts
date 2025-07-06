@@ -27,6 +27,7 @@ const projectsCollection = defineCollection({
     demo: z.string().url().optional(),
     github: z.string().url().optional(),
     highlighted: z.boolean().default(false),
+    dateAdded: z.date(),
   }).refine(data => data.image || data.video, {
     message: "Either image or video must be provided",
   }),

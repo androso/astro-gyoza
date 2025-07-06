@@ -44,9 +44,12 @@ const allTags = await getAllTags()
 const allCategories = await getAllCategories()
 const allProjects = await getCollection('projects')
 
+// Sort projects by dateAdded in descending order (most recent first)
+const sortedProjects = allProjects.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())
+
 // Separate highlighted and regular projects
-const highlightedProjects = allProjects.filter(project => project.data.highlighted)
-const regularProjects = allProjects.filter(project => !project.data.highlighted)
+const highlightedProjects = sortedProjects.filter(project => project.data.highlighted)
+const regularProjects = sortedProjects.filter(project => !project.data.highlighted)
 
 const getPageUrl = (page: number) => {
 	if (page === 1) return '/'
