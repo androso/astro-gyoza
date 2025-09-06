@@ -4,6 +4,7 @@ date: 2023-11-11
 tags: [Crafting Wisdom]
 category: Life
 comments: false
+draft: true
 ---
 
 > Nota: el siguiente volumen ha sido traducido al español utilizando GPT-4, probablemente no suene elegante o contenga errores, para la versión original ir [aquí](/crafting-wisdom-1)

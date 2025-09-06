@@ -4,6 +4,7 @@ date: 2023-11-11
 tags: [Crafting Wisdom]
 category: Life
 comments: false
+draft: true
 ---
 
 For the last months i've been using [Instagram](https://www.instagram.com/androso.sv/) as a vault

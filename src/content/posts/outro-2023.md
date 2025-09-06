@@ -3,6 +3,7 @@ title: Outro 23
 date: 2024-01-04
 category: Life
 comments: false
+draft: true
 ---
 
 I caused pain and was hurt as well
