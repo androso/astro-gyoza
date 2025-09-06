@@ -91,6 +91,11 @@
       "icon": "icon-pantone"
     },
     {
+      "name": "Blog",
+      "link": "/blog",
+      "icon": "icon-edit"
+    },
+    {
       "name": "Projects",
       "link": "/projects",
       "icon": "icon-flask"
