@@ -34,7 +34,8 @@ const { currentPage } = Astro.props as PageProps
 
 const allProjects = await getCollection('projects')
 
-const homepagePosts = (await getOldestPosts()).slice(0, 6)
+const homepageTimelineLimit = appConfig.posts.homepageTimelineLimit
+const homepagePosts = (await getOldestPosts()).slice(0, homepageTimelineLimit)
 
 // Sort projects by dateAdded in descending order (most recent first)
 const sortedProjects = allProjects.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())

@@ -116,7 +116,8 @@
     }
   ],
   "posts": {
-    "perPage": 10
+    "perPage": 10,
+    "homepageTimelineLimit": 6
   },
   "footer": {
     "startTime": "2024-04-14T00:00:00Z"
