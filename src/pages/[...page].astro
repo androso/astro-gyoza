@@ -1,12 +1,13 @@
 ---
 import type { GetStaticPaths } from 'astro'
 import PageLayout from '@/layouts/PageLayout.astro'
-import { getSortedPosts } from '@/utils/content'
+import { getOldestPosts, getSortedPosts } from '@/utils/content'
 import appConfig from '@/config.json'
 import Hero from '@/components/hero/Hero.astro'
 import SectionBlock from '@/components/SectionBlock.astro'
 import ProjectList from '@/components/ProjectList.astro'
 import HighlightedProjects from '@/components/HighlightedProjects.astro'
+import Timeline from '@/components/Timeline.astro'
 import { getCollection } from 'astro:content'
 
 interface PageProps extends Record<string, unknown> {
@@ -33,6 +34,8 @@ const { currentPage } = Astro.props as PageProps
 
 const allProjects = await getCollection('projects')
 
+const homepagePosts = (await getOldestPosts()).slice(0, 6)
+
 // Sort projects by dateAdded in descending order (most recent first)
 const sortedProjects = allProjects.sort((a, b) => b.data.dateAdded.getTime() - a.data.dateAdded.getTime())
 
@@ -58,6 +61,15 @@ const regularProjects = sortedProjects.filter(project => !project.data.highlight
         <div class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid items-start gap-10">
           <SectionBlock title="Projects">
             <ProjectList projects={regularProjects} columns={3} />
+          </SectionBlock>
+        </div>
+      )
+    }
+    {
+      currentPage === 1 && (
+        <div class="max-w-[800px] px-4 md:px-8 py-20 mx-auto">
+          <SectionBlock title="Latest Posts">
+            <Timeline posts={homepagePosts} />
           </SectionBlock>
         </div>
       )
